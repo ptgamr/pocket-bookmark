@@ -16,6 +16,25 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    torii: {
+      providers: {
+        'google-oauth2': {
+          apiKey:      '513128430069-dl8puo1p1275asggk2atoos33bpaqpdc.apps.googleusercontent.com',
+          redirectUri: 'http://localhost:4200' // default is the current URL
+        }
+      }
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self' data: https://fonts.gstatic.com",
+      'connect-src': "'self' https://getpocket.com",
+      'img-src': "'self' data:",
+      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
+      'media-src': "'self'"
     }
   };
 
